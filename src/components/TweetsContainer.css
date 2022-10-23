@@ -1,0 +1,14 @@
+.tweetsContainer {
+  margin: 0 auto;
+  width: 50%;
+  height: 93.5vh;
+  overflow-y: scroll;
+  /* -ms-overflow-style: none; */
+  /* IE and Edge */
+  /* scrollbar-width: none; */
+  /* Firefox */
+}
+
+.tweetsContainer::-webkit-scrollbar {
+  display: none;
+}

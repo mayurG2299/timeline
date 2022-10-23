@@ -1,0 +1,19 @@
+.dateFilterOptions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.dateFilterPopover {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.dateFilterApply {
+    display: flex;
+    margin-top: 15px;
+    justify-content: flex-end;
+
+}

@@ -1,0 +1,14 @@
+.appHeader {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    border-bottom: 1px solid lightgrey;
+    width: 50%;
+
+}
+
+.appHeaderTitle {
+    object-fit: contain;
+    color: #e5e7e8;
+}

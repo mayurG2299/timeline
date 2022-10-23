@@ -1,0 +1,70 @@
+.tweetContainer {
+  display: flex;
+  border: 1px solid #E1E8ED;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  /* width: 100%; */
+}
+
+.avatarContainer {
+  max-width: 50px;
+  margin: 10px;
+  /* object-fit: contain; */
+}
+
+.dataContainer {
+  margin-top: 10px;
+  width: 90%;
+}
+
+.tweetImage {
+  margin-top: 5px;
+  width: 60%;
+  object-fit: contain;
+  border-radius: 15px;
+  border: 0.5px solid #E1E8ED;
+  max-width: 80%;
+
+}
+
+.userName {
+  font-weight: bolder;
+  color: white;
+}
+
+.tweetText {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  font-weight: normal;
+  word-wrap: break-word;
+  width: 90%;
+  color: #E1E8ED;
+}
+
+.optionsContainer {
+  width: 90%;
+}
+
+.likeOption {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 60px;
+
+}
+
+.likeOption:hover .likeCount,
+.likeOption:hover .likedCount {
+  color: #f91880;
+  /* opacity: 0.5; */
+}
+
+.likeCount {
+  margin-bottom: 2px;
+  color: #f91881;
+}
+
+.likedCount {
+  margin-bottom: 2px;
+  color: #d6d9db;
+}
