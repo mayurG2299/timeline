@@ -12,3 +12,15 @@
 .tweetsContainer::-webkit-scrollbar {
   display: none;
 }
+
+@media (max-width: 767px) {
+  .tweetsContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .tweetsContainer {
+    width: 100%;
+  }
+}

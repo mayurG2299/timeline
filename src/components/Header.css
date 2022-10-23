@@ -12,3 +12,15 @@
     object-fit: contain;
     color: #e5e7e8;
 }
+
+@media (max-width: 767px) {
+    .appHeader {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .appHeader {
+        width: 100%;
+    }
+}
