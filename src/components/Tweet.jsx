@@ -28,13 +28,13 @@ function Tweet({
   likes,
   isLiked,
 }) {
-  console.log({ likes, isLiked, id });
+  // console.log({ likes, isLiked, id });
   const [likesCount, setLikeCount] = useState(
     isLiked ? JSON.stringify(parseInt(likes) + 1) : likes
   );
   const [liked, setIsLiked] = useState(isLiked ? 1 : 0);
   const classes = useClasses();
-  console.log({ likesCount, liked });
+  // console.log({ likesCount, liked });
   const onLike = () => {
     if (liked) {
       setLikeCount(parseInt(likesCount) - 1);
@@ -47,13 +47,13 @@ function Tweet({
     } else {
       setLikeCount(parseInt(likesCount) + 1);
       let islikedArr = JSON.parse(localStorage.getItem("isLiked"));
-      console.log({ islikedArr });
+      // console.log({ islikedArr });
       islikedArr.push(id);
-      console.log({ islikedArr });
+      // console.log({ islikedArr });
       localStorage.setItem("isLiked", JSON.stringify(islikedArr));
       setIsLiked(true);
     }
-    console.log({ likesCount, liked });
+    // console.log({ likesCount, liked });
   };
   return (
     <div className="tweetContainer">

@@ -8,7 +8,7 @@ function Footer({ tweetsContainerRef }) {
       <Tooltip title="Go back to top">
         <IconButton
           onClick={() => {
-            console.log(tweetsContainerRef);
+            // console.log(tweetsContainerRef);
             tweetsContainerRef.scrollTo({
               top: 0,
               left: 0,

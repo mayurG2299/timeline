@@ -5,7 +5,7 @@ import Tweet from "./Tweet";
 import "./TweetsContainer.css";
 function TweetsContainer({ tweets, likedPost, setTweetsContainerRef }) {
   const tweetsContainer = useRef(null);
-  console.log({ likedPost });
+  // console.log({ likedPost });
   setTweetsContainerRef(tweetsContainer.current);
   return (
     <div className="tweetsContainer" ref={tweetsContainer}>
