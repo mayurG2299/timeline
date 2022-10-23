@@ -10,7 +10,7 @@ function MainContainer() {
 
   useEffect(() => {
     axios
-      .get("http://www.mocky.io/v2/5d1ef97d310000552febe99d")
+      .get("https://www.mocky.io/v2/5d1ef97d310000552febe99d")
       .then((response) => {
         // console.log(response.data);
         // response.status == 200 ? setTweets(response.data) : setTweets([]);
