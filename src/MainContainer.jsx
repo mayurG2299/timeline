@@ -17,6 +17,7 @@ function MainContainer() {
         response.status == 200
           ? localStorage.setItem("tweets", JSON.stringify(response.data))
           : localStorage.setItem("tweets", JSON.stringify([]));
+        console.log(response.data.length);
         if (
           JSON.parse(localStorage.getItem("filterData")) == null ||
           JSON.parse(localStorage.getItem("filterData")).length == 0
