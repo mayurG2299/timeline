@@ -1,7 +1,7 @@
-import React from "react";
-import "./Footer.css";
-import NavigationOutlinedIcon from "@mui/icons-material/NavigationOutlined";
-import { IconButton, Tooltip, alpha } from "@mui/material";
+import React from "react"
+import "./Footer.css"
+import NavigationOutlinedIcon from "@mui/icons-material/NavigationOutlined"
+import { IconButton, Tooltip, alpha } from "@mui/material"
 function Footer({ tweetsContainerRef }) {
   return (
     <div className="goToTop">
@@ -13,7 +13,7 @@ function Footer({ tweetsContainerRef }) {
               top: 0,
               left: 0,
               behavior: "smooth",
-            });
+            })
           }}
           sx={{
             "&:hover": {
@@ -25,7 +25,7 @@ function Footer({ tweetsContainerRef }) {
         </IconButton>
       </Tooltip>
     </div>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

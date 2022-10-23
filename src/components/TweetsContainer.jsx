@@ -1,15 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef } from "react"
 
-import Tweet from "./Tweet";
+import Tweet from "./Tweet"
 
-import "./TweetsContainer.css";
+import "./TweetsContainer.css"
 function TweetsContainer({ tweets, likedPost, setTweetsContainerRef }) {
-  const tweetsContainer = useRef(null);
+  const tweetsContainer = useRef(null)
   // console.log({ likedPost });
-  setTweetsContainerRef(tweetsContainer.current);
+  setTweetsContainerRef(tweetsContainer.current)
   return (
     <div className="tweetsContainer" ref={tweetsContainer}>
-      {tweets.map((tweet) => {
+      {tweets.map(tweet => {
         return (
           <Tweet
             id={tweet._id}
@@ -20,10 +20,10 @@ function TweetsContainer({ tweets, likedPost, setTweetsContainerRef }) {
             likes={tweet?.likes ?? 0}
             isLiked={likedPost.includes(tweet._id) ? true : false}
           />
-        );
+        )
       })}
     </div>
-  );
+  )
 }
 
-export default TweetsContainer;
+export default TweetsContainer

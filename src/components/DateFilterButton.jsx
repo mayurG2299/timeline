@@ -1,90 +1,82 @@
-import { TextField, IconButton, Popover, Button, Tooltip } from "@mui/material";
-import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
-import React, { useState } from "react";
-import "./DateFilterButton.css";
-import { alpha } from "@mui/material";
-import Notification from "./Notification";
+import { TextField, IconButton, Popover, Button, Tooltip } from "@mui/material"
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined"
+import React, { useState } from "react"
+import "./DateFilterButton.css"
+import { alpha } from "@mui/material"
+import Notification from "./Notification"
 
 const dateFilterLogic = (startDate, endDate, data) => {
-  let filteredData = data.filter((e) => {
-    let publishedDate = new Date(e.publishedDate);
-    if (
-      publishedDate > new Date(startDate) &&
-      publishedDate < new Date(endDate)
-    )
-      return e;
-  });
-  return filteredData;
-};
+  let filteredData = data.filter(e => {
+    let publishedDate = new Date(e.publishedDate)
+    if (publishedDate > new Date(startDate) && publishedDate < new Date(endDate)) return e
+  })
+  return filteredData
+}
 
 function DateFilterButton({ onFilter }) {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [startDate, setStartDate] = useState(
-    localStorage.getItem("startDate") || null
-  );
-  const [endDate, setEndDate] = useState(
-    localStorage.getItem("endDate") || null
-  );
+  const [anchorEl, setAnchorEl] = useState(null)
+  const [startDate, setStartDate] = useState(localStorage.getItem("startDate") || null)
+  const [endDate, setEndDate] = useState(localStorage.getItem("endDate") || null)
   const [notify, setNotify] = useState({
     isOpen: false,
     message: "",
     type: "",
-  });
-  const tweetsData = JSON.parse(localStorage.getItem("tweets"));
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+  })
+  const tweetsData = JSON.parse(localStorage.getItem("tweets"))
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget)
+  }
 
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
-  const open = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
+  const open = Boolean(anchorEl)
+  const id = open ? "simple-popover" : undefined
 
   const handleApplyFilter = () => {
     // console.log({ startDate, endDate });
 
-    const filteredData = dateFilterLogic(startDate, endDate, tweetsData);
-    localStorage.setItem("filterData", JSON.stringify(filteredData));
+    const filteredData = dateFilterLogic(startDate, endDate, tweetsData)
+    localStorage.setItem("filterData", JSON.stringify(filteredData))
     // console.log({ filteredData });
     if (filteredData.length) {
-      onFilter(filteredData);
-      localStorage.setItem("startDate", startDate);
-      localStorage.setItem("endDate", endDate);
+      onFilter(filteredData)
+      localStorage.setItem("startDate", startDate)
+      localStorage.setItem("endDate", endDate)
     } else {
-      onFilter(tweetsData);
-      setStartDate(null);
-      setEndDate(null);
-      localStorage.setItem("startDate", null);
-      localStorage.setItem("endDate", null);
+      onFilter(tweetsData)
+      setStartDate(null)
+      setEndDate(null)
+      localStorage.setItem("startDate", null)
+      localStorage.setItem("endDate", null)
       setNotify({
         isOpen: true,
         message: "No match found for the applied filter",
         type: "error",
-      });
+      })
     }
-    handleClose();
-  };
+    handleClose()
+  }
 
   const handleRemoveFilter = () => {
-    onFilter(tweetsData);
-    localStorage.setItem("startDate", null);
-    setStartDate(null);
-    localStorage.setItem("endDate", null);
-    setEndDate(null);
-    localStorage.setItem("filterData", null);
-    handleClose();
-  };
+    onFilter(tweetsData)
+    localStorage.setItem("startDate", null)
+    setStartDate(null)
+    localStorage.setItem("endDate", null)
+    setEndDate(null)
+    localStorage.setItem("filterData", null)
+    handleClose()
+  }
 
-  const handleStartDateChange = (event) => {
+  const handleStartDateChange = event => {
     // console.log(typeof event.target.value);
-    setStartDate(event.target.value);
-  };
+    setStartDate(event.target.value)
+  }
 
-  const handleEndtDateChange = (event) => {
-    setEndDate(event.target.value);
-  };
+  const handleEndtDateChange = event => {
+    setEndDate(event.target.value)
+  }
   return (
     <>
       <Tooltip title="Date Filter">
@@ -173,7 +165,7 @@ function DateFilterButton({ onFilter }) {
       </Popover>
       <Notification notify={notify} setNotify={setNotify} />
     </>
-  );
+  )
 }
 
-export default DateFilterButton;
+export default DateFilterButton
